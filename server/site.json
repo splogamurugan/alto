@@ -1,0 +1,58 @@
+{
+    "modules":{
+        "module": {
+            "templates": {
+                "index": "/module/index.jhtml",
+                "add": "/module/add.jhtml",
+                "edit": "/module/edit.jhtml"
+            },
+            "routes": {
+                ":module/:action": "app.module.action",
+                ":module/:action/:id": "app.module.action"
+            }
+        },
+        "home": {
+            "templates": {
+                "index": "/home.jhtml"
+            },
+            "routes": {
+                "": "app.content.render", 
+                "*": "app.content.render" 
+            }
+        },
+        "menu": {
+            "templates": {
+                "index": "/menu.jhtml"
+            },
+            "routes": {
+                "*": "app.module.menu.render" 
+            }
+        },
+        "cars":{
+            "extends": "module",
+            "source": {
+                "index":"./server/source/defects/index.json", 
+                "view":"./server/source/defects/view.json", 
+                "add": "./server/source/defects/add.json",
+                "edit": "./server/source/defects/edit.json",
+                "delete": "./server/source/defects/delete.json",
+                "save": "./server/source/defects/save.json"
+            },
+            "fields": {
+                
+            },
+            "labels": {
+
+            }
+        },
+        "documents": {
+            "templates": {}
+        }
+    },
+    
+    "config":{
+        "templates_path": "./server/templates",
+        "title": "Alto"
+    }
+
+}

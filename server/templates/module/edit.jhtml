@@ -1,0 +1,41 @@
+<div class="page-header">
+  <h1><small><?js= title ?></small></h1>
+</div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><h4>Edit</h4></div>
+
+  <!-- Table -->
+  <table class="table">
+    
+<?js
+    for (field in fields) {
+      var display = ('view' in fields[field] && 'show' in fields[field]['view'] && fields[field]['view']['show']==false)?'none':'';
+?>
+        <tr class="d-<?js= display ?>">
+        
+          <th><?js= fields[field]['label'] ?></th>
+          
+          <td id="<?js= fields[field]['arguments']['name'] ?>">
+          
+          </td>
+
+        </tr>
+<?js    
+
+        app.content.postRender(
+
+            "app.content.fetchInto(
+              document.getElementById('"+fields[field]['arguments']['name']+"'), 
+              app.site.config.templates_path+'/fields/'+'"+fields[field]['type']+"'+'.jhtml', 
+              {\"arguments\":"+JSON.stringify(fields[field]['arguments'])+"}
+            );"
+            
+        )
+
+    }
+?>
+  
+  </table>
+</div>

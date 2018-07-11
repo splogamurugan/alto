@@ -1,0 +1,6 @@
+{
+    "Home": "#", 
+    "Cars": "#cars/index", 
+    "Users": "#users/index", 
+    "Work Items": {"Queries":"./queries"}
+}

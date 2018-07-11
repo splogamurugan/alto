@@ -1,0 +1,1 @@
+<input size="100%" <?js for (arg in arguments) { ?> <?js= arg ?> = <?js= arguments[arg] ?>  <?js} ?> />

@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h1><small><?js= title ?> List</small></h1>
+</div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><?js= title ?> list</div>
+
+  <!-- Table -->
+  <table class="table">
+    <tr>
+<?js
+    for (i=0; i<header.length; i++) {
+        
+?>
+        <th><?js= label[header[i]] ?></th>
+<?js        
+    }
+?>
+        <th>Options</th>
+    </tr>
+<?js
+    for (i=0; i<records.length; i++) {
+?>
+    <tr>
+<?js 
+        for (j=0; j<header.length; j++) {
+?>
+        <td><a href="#<?js= args.module ?>/view/<?js= records[i]["id"] ?>"><?js= records[i][header[j]] ?></a></td>
+<?js
+        }
+?>
+        <td><a href="#<?js= args.module ?>/edit/<?js= records[i]["id"] ?>">Edit</a></td>
+    </tr>
+<?js 
+    }    
+?>
+
+  </table>
+</div>

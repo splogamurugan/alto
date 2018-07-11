@@ -1,0 +1,18 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><?js= app.site.config.title ?></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <?js
+    for (m in menu) {
+?>
+      <li>
+        <a class="nav-link" href="<?js= menu[m] ?>"><?js= m ?> <span class="sr-only">(current)</span></a>
+      </li>
+<?js
+    }
+?>
+    </ul>
+  </div>
+</nav>

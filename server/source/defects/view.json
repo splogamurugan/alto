@@ -1,0 +1,6 @@
+{
+    "title": "Cars",
+    "header": ["name", "date", "assigned"],
+    "label": {"name": "Car Name", "date": "Created Date", "assigned": "Assigned To"},
+    "record": {"id":343434, "name": "super Car", "date": "2018-08-20", "assigned": "Loga"}
+}

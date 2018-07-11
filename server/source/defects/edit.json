@@ -1,0 +1,42 @@
+{
+    "title": "Cars",
+    "fields": {
+        "name": {
+            "label": "Car Name",
+            "arguments": {"type": "text", "name": "name", "value":"super Car"},
+            "type": "input"
+        }, 
+
+        "id": {
+            "label": "Car Id",
+            "arguments": {"type": "hidden", "name": "id", "value":"4343434"},
+            "type": "input",
+            "view": {"Car": false} 
+        }, 
+
+        "date": {
+            "label": "Manufactured Date",
+            "arguments": {"type": "date", "name": "date", "value":"2018-08-20"},
+            "type": "input"
+        },
+
+        "assigned": {
+            "label": "User",
+            "arguments": {"type": "text", "name": "assigned", "value":"Loga"},
+            "type": "input"
+        },
+
+        "email": {
+            "label": "User Email",
+            "arguments": {"type": "email", "name": "email", "value":"splogamurugan@gmail.com"},
+            "type": "input"
+        },
+
+        "phone": {
+            "label": "User Phone",
+            "arguments": {"type": "number", "name": "phone", "value":"9632119119"},
+            "type": "input"
+        }
+
+    }
+}

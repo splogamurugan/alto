@@ -1,0 +1,21 @@
+<div class="page-header">
+  <h1><small><?js= title ?></small></h1>
+</div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><?js= title ?> view</div>
+
+  <!-- Table -->
+  <table class="table">
+    
+<?js
+    for (i=0; i<header.length; i++) {
+?>
+        <tr><th><?js= label[header[i]] ?></th><td><?js= record[header[i]] ?></td></tr>
+<?js        
+    }
+?>
+  
+  </table>
+</div>
