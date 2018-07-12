@@ -12,5 +12,9 @@ define(['jquery'], function ($) {
         }).done(callback);
     }
 
+    Http.prototype.getJSON = function(url) {
+        return $.getJSON(url);
+    }
+
     return new Http();
 });

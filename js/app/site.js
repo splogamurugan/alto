@@ -1,3 +1,3 @@
-define(['jquery'], function($) {
-    return $.getJSON('./server/site.json');
+define(['./http'], function(http) {
+    return http.getJSON('./server/site.json');
 });

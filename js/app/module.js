@@ -1,4 +1,4 @@
-define(['jquery', './content', './site', './template', './exec'], function($, content, site, Template, exec) {
+define(['./http', './content', './site', './template', './exec'], function(http, content, site, Template, exec) {
     function Module() {
 
     }
@@ -9,10 +9,7 @@ define(['jquery', './content', './site', './template', './exec'], function($, co
             var t = new Template(templatePath);
             site.then(function() {
                 var src = site.responseJSON.modules[args.module]['source'][args.action];
-                $.ajax({
-                    url: src,
-                    context: document.body
-                }).done(function(s) {
+                http.get(src, document.body, function(s) {
                     t.setVars(s);
                     t.assignVar("args", args);
                     t.assignVar('config', site.responseJSON.config);

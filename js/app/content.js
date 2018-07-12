@@ -1,4 +1,4 @@
-define(['./template', './site', 'jquery'], function(Template, site, $) {
+define(['./template', './site', 'jquery', './http'], function(Template, site, $, http) {
 
     function Content() {
         this.postExecuteArr = [];
@@ -19,7 +19,7 @@ define(['./template', './site', 'jquery'], function(Template, site, $) {
             if (Array.isArray(args['source'])) {
                 for (i=0; i<args['source'].length; i++) {
                     var useas = args['source'][i]['useas'];
-                    resources.push($.getJSON(args['source'][i]['resource']).then(function(d){
+                    resources.push(http.getJSON(args['source'][i]['resource']).then(function(d){
                         var ret = {};
                         ret[this.useas] = d;
                         return ret;
