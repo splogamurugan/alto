@@ -3,13 +3,13 @@
 </div>
 
 <div class="panel panel-default">
-  <!-- Default panel contents -->
   <div class="panel-heading"><h4>Edit</h4></div>
 
   <!-- Table -->
   <table class="table">
     
 <?js
+
     for (field in fields) {
       var display = ('view' in fields[field] && 'show' in fields[field]['view'] && fields[field]['view']['show']==false)?'none':'';
 ?>
@@ -24,11 +24,11 @@
         </tr>
 <?js    
 
-        app.content.postRender(
+        exec.postRender(
 
-            "app.content.fetchInto(
+            "content.fetchInto(
               document.getElementById('"+fields[field]['arguments']['name']+"'), 
-              app.site.config.templates_path+'/fields/'+'"+fields[field]['type']+"'+'.jhtml', 
+              '/fields/'+'"+fields[field]['type']+"'+'.jhtml', 
               {\"arguments\":"+JSON.stringify(fields[field]['arguments'])+"}
             );"
             

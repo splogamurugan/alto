@@ -7,26 +7,27 @@
                 "edit": "/module/edit.jhtml"
             },
             "routes": {
-                ":module/:action": "app.module.action",
-                ":module/:action/:id": "app.module.action"
+                ":module/:action": "module.action",
+                ":module/:action/:id": "module.action"
             }
         },
         "home": {
-            "templates": {
-                "index": "/home.jhtml"
-            },
+            "template": "/home.jhtml",
             "routes": {
-                "": "app.content.render", 
-                "*": "app.content.render" 
-            }
+                "": "content.render",
+                "*": "content.render" 
+            },
+            "render": "module"
         },
         "menu": {
-            "templates": {
-                "index": "/menu.jhtml"
-            },
+            "source": [
+                {"resource": "./server/source/menu/index.json", "useas": "menu"}
+            ],
+            "template": "/menu.jhtml",
             "routes": {
-                "*": "app.module.menu.render" 
-            }
+                "*": "content.render" 
+            },
+            "render": "menu"
         },
         "cars":{
             "extends": "module",
