@@ -14,8 +14,7 @@
         "home": {
             "template": "/home.jhtml",
             "routes": {
-                "": "content.render",
-                "*": "content.render" 
+                "": "content.render"
             },
             "render": "module"
         },

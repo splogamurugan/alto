@@ -6,8 +6,8 @@ requirejs.config({
 });
 
 // Start the main app logic.
-requirejs(['jquery', 'app/router', 'app/content', 'app/module/menu', 'app/site'],
-function   ($, router, content, menu, site) {
+requirejs(['jquery', 'app/router', 'app/content', 'app/site'],
+function   ($, router, content, site) {
     $(document).ready(function() {
         site.then(function() {
             var s = site.responseJSON;
